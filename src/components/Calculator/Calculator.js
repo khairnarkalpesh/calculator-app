@@ -57,7 +57,7 @@ const Calculator = () => {
       <div className="row">
         <div className="column">
           <div className="title">
-            <h1>Calculator with history</h1>
+            <span>Calculator with history</span>
           </div>
           <div className="calculator">
             <section className="screen">
