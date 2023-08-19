@@ -28,7 +28,9 @@ const Calculator = () => {
     if (value === "=") {
       try {
         const evalResult = eval(computation);
-        setHistory([...history, { computation, result: evalResult }]);
+        if (computation !== "" && /[+\-*/]/.test(computation)) {
+          setHistory([...history, { computation, result: evalResult }]);
+        }
         setResult(evalResult);
         setComputation("");
       } catch (error) {
