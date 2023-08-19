@@ -199,6 +199,7 @@
   right: -300px;
   width: 400px;
   height: 100%;
+  padding: 20px;
   background-color: #fff;
   transition: right 0.3s;
   z-index: 20;
@@ -225,7 +226,6 @@
 .history-entry {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #ddd;
   padding: 8px 0;
   flex-direction: column;
   gap: 10px;
@@ -234,14 +234,14 @@
 .history-computation {
   flex: 2;
   text-align: right;
-  font-size: 14px;
+  font-size: 20px;
   color: var(--color-gray);
 }
 
 .history-result {
   flex: 1;
   text-align: right;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: bold;
 }
 
@@ -275,7 +275,6 @@
 .history-entry {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #ddd;
   padding: 10px;
 }
 
@@ -338,4 +337,14 @@
   .history-title {
     margin-top: 20px;
   }
+  .history-computation{
+    font-size: 25px;
+  }
+  .history-result{
+    font-size: 30px;
+  }
+  .clear-history{
+    font-style: 18px;
+  }
+
 }
