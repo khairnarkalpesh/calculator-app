@@ -3,6 +3,7 @@ import "./styles.css";
 const Calculator = () => {
   const [result, setResult] = useState("0");
   const [computation, setComputation] = useState("");
+  const [computationQuery, setComputationQuery] = useState("");
   const [history, setHistory] = useState([]);
   const [showHistory, setShowHistory] = useState(false);
   const symbols = ["CE", "C", "<-", "/"];
@@ -28,10 +29,12 @@ const Calculator = () => {
     if (value === "=") {
       try {
         const evalResult = eval(computation);
+        // const evalResult = Function(`return ${computation}`)();
         if (computation !== "" && /[+\-*/]/.test(computation)) {
           setHistory([...history, { computation, result: evalResult }]);
         }
         setResult(evalResult);
+        setComputationQuery(computation+" =")
         setComputation("");
       } catch (error) {
         setResult("Error");
@@ -39,10 +42,11 @@ const Calculator = () => {
     } else if (value === "C") {
       setResult("0");
       setComputation("");
+      setComputationQuery("")
     } else if (value === "<-") {
       setComputation(computation.slice(0, -1));
     } else if (value === "CE") {
-      const lastOperatorIndex = computation.search(/[+\-*/]/g);
+      const lastOperatorIndex = getLastIndex(computation);
       if (lastOperatorIndex > -1) {
         setComputation(computation.substring(0, lastOperatorIndex + 1));
       }
@@ -50,6 +54,17 @@ const Calculator = () => {
       setComputation(computation + value);
     }
   };
+
+  const getLastIndex = (inputStr) => {
+    const operators = "+-*/";
+    for (let i = inputStr.length - 1; i >= 0; i--) {
+      if (operators.includes(inputStr[i])) {
+        return i;
+      }
+    }
+    return -1;
+  };
+
   const clearHistory = () => {
     setHistory([]);
   };
@@ -63,6 +78,7 @@ const Calculator = () => {
           </div>
           <div className="calculator">
             <section className="screen">
+              <div className="computation-result">{computationQuery}</div>
               <div className="result-screen">{result}</div>
               <div className="computation-screen">{computation}</div>
             </section>
@@ -98,7 +114,7 @@ const Calculator = () => {
         </div>
         <div className="">
           {showHistory && (
-            <div className="history-" onClick={() => setShowHistory(false)}>
+            <div>
               <div className={`history-panel ${showHistory ? "show" : ""}`}>
                 <div className="history-title">History</div>
                 <div className="history-list">
