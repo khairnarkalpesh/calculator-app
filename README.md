@@ -1,70 +1,102 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Calculator App
 
-## Available Scripts
+A responsive calculator application built with **React.js**, **CSS**, and **JavaScript**. This app includes a history panel that tracks and stores calculations using **localStorage**. It is fully responsive and works seamlessly across various screen sizes.
 
-In the project directory, you can run:
+![image](https://github.com/user-attachments/assets/a9ee4850-e2fc-408f-b9aa-7169b73c4b7d)
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. **Basic Calculator Operations**  
+   - Perform addition, subtraction, multiplication, and division.  
+   - Default result is set to `0`.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. **Evaluation of Expressions**  
+   - Use the `=` button to calculate and display the result of the expression.
 
-### `npm test`
+3. **History Panel**  
+   - Toggle the visibility of the history panel using a hamburger icon.  
+   - On screens smaller than `576px`, the history panel appears as an overlay.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. **History Tracking**  
+   - Calculation history is stored in **localStorage**.  
+   - New entries are added to the history when the `=` button is clicked.
 
-### `npm run build`
+5. **Scrollable History**  
+   - Easily navigate through the calculation history with a scrollable panel.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+6. **Delete Button**  
+   - Clear the entire calculation history with a single button click.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+7. **Responsive Design**  
+   - The app is fully responsive and adapts to screen sizes ranging from `300px` to full-screen displays.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Tech Stack
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Frontend**: React.js, CSS, JavaScript  
+- **Storage**: localStorage  
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Installation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Follow these steps to set up and run the project locally:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. **Clone the Repository**  
+   ```bash
+   git clone https://github.com/khairnarkalpesh/calculator-app.git
+   cd calculator-app
+   ```
 
-## Learn More
+2. **Install Dependencies**  
+   ```bash
+   npm install
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. **Run the Application**  
+   ```bash
+   npm start
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. **Open in Browser**  
+   The app will open automatically in your default browser at `http://localhost:3000`.
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Usage
 
-### Analyzing the Bundle Size
+1. **Perform Calculations**  
+   - Use the buttons to input numbers and operators.  
+   - Press `=` to evaluate the expression and display the result.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+2. **View History**  
+   - Click the hamburger icon to toggle the history panel.  
+   - Scroll through past calculations.
 
-### Making a Progressive Web App
+3. **Clear History**  
+   - Click the delete button (🗑️) to clear the entire calculation history.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## Folder Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
+calculator-app/
+├── public/
+│   └── index.html
+├── src/
+│   ├── components/
+│   │   ├── Calculator.js
+│   ├── App.js
+│   ├── App.css
+│   ├── index.js
+│   └── index.css
+├── package.json
+└── README.md
+```
 
-### Deployment
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
